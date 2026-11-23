@@ -1,0 +1,86 @@
+// Recent.jsx
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import Heading from "../../common/Heading";
+import "./recent.css";
+import RecentCard from "./RecentCard";
+import { useResidencyStore } from "../../../store/useResidencyStore";
+import { PuffLoader } from "react-spinners";
+
+const Recent = () => {
+  const { residencies, fetchAllResidencies, loading, isError } =
+    useResidencyStore();
+
+  useEffect(() => {
+    fetchAllResidencies();
+  }, [fetchAllResidencies]);
+
+  if (isError) {
+    return (
+      <section className="recent section">
+        <div className="container">
+          <div className="no-results-box" style={{ marginTop: "2rem" }}>
+            <p style={{ color: "#e74c3c" }}>Error while fetching property data. Please try again later.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="wrapper flexCenter" style={{ height: "80vh" }}>
+        <PuffLoader color="#27ae60" aria-label="puff-loading" />
+      </div>
+    );
+  }
+
+  return (
+    <section className="recent">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <Heading
+            title="Recent Properties"
+            subtitle="Browse our latest listings and find your dream home today. We offer a wide range of properties from modern apartments to luxury villas."
+          />
+        </motion.div>
+
+        <motion.div
+          className="recent-container"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          {residencies.length > 0 ? (
+            residencies
+              .slice(0, 6)
+              .map((card, i) => <RecentCard key={i} card={card} />)
+          ) : (
+            <motion.div
+              className="no-residency"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              style={{
+                fontSize: "1rem",
+                color: "#2d3954",
+                marginBottom: "4rem",
+                fontWeight: "600",
+              }}
+            >
+              No Properties Found
+            </motion.div>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Recent;

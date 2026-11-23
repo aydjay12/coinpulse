@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "rent-up-api",
+    "builds": [
+        {
+            "src": "server/index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server/index.js"
+        }
+    ]
+}

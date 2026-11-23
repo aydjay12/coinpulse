@@ -1,0 +1,185 @@
+/* Hero Section */
+.hero {
+  /* Use the same gradient/image style as Auth screens */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/banner.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 85vh;
+  /* Slightly less than full screen */
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 80px;
+  /* Account for sticky header */
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+}
+
+/* Typography */
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+}
+
+/* Search Form */
+.hero form {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* Add subtle glass effect border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero .box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  border-right: 1px solid var(--border);
+  min-width: 150px;
+}
+
+.hero .box:last-of-type {
+  border-right: none;
+}
+
+.hero .box span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero .box input {
+  width: 100%;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: var(--text-main);
+  background: transparent;
+  padding: 0.25rem 0;
+}
+
+.hero .box input:focus {
+  outline: none;
+}
+
+.hero .box input::placeholder {
+  color: #9ca3af;
+}
+
+/* Hide Spinners/Arrows for number input */
+.hero .box input[type="number"]::-webkit-outer-spin-button,
+.hero .box input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hero .box input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.hero h4 {
+  font-size: 1rem;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+}
+
+/* Search Button */
+.hero button.search {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 1rem;
+  min-width: 150px;
+  /* Ensure enough width for text */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  /* Adjusted for text */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(39, 174, 96, 0.2);
+  flex-shrink: 0;
+}
+
+.hero button.search:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero form {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .hero .box {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0 1rem 0;
+  }
+
+  .hero .box:last-of-type {
+    border-bottom: none;
+  }
+
+  .hero button.search {
+    width: 100%;
+    height: 50px;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+  }
+}

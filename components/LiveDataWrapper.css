@@ -1,0 +1,81 @@
+.price-analysis-card {
+  padding: 24px;
+}
+
+.movers-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.coin-market-sections {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.movers-grid-full {
+  width: 100%;
+}
+
+.movers-card {
+  min-height: 100%;
+}
+
+.mover-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.mover-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.mover-asset {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.mover-asset img {
+  border-radius: 9999px;
+}
+
+.mover-metrics {
+  text-align: right;
+}
+
+.movers-empty {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.exchange-description {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .movers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .exchange-description {
+    max-width: 72px;
+  }
+}

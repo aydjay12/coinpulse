@@ -1,0 +1,173 @@
+/* Team Section */
+.team {
+  padding: 5rem 0;
+  padding-top: 2rem;
+  background-color: var(--white);
+}
+
+.team .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team .box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.team .box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.team .listings {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ff6922;
+  color: var(--white);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  border: none;
+  cursor: default;
+  transition: all 0.3s;
+}
+
+.team .box:hover .listings {
+  background-color: var(--accent);
+}
+
+.team .img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+}
+
+.team .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: unset;
+}
+
+.team .box:hover .img img {
+  border-color: var(--accent);
+}
+
+.team .img i {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  background: var(--accent);
+  color: var(--white);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border: 2px solid var(--white);
+}
+
+/* Location Text */
+.team .details i.fa-location-dot {
+  color: var(--text-light);
+  margin-right: 0.5rem;
+}
+
+.team label {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.team h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--primary);
+  font-family: 'Merriweather', serif;
+}
+
+/* Social Icons */
+.team ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.team ul li {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-section);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.team ul li:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Action Buttons */
+.team .pad {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.team button.message,
+.team button.call {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team button.call {
+  background: var(--primary);
+  padding: 0.8rem;
+  /* Square-ish */
+}
+
+.team button.message:hover,
+.team button.call:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}

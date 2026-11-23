@@ -1,0 +1,21 @@
+.token-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+
+.token-img-desktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+
+.saved-assets-header {
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}

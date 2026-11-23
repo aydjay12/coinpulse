@@ -1,0 +1,10 @@
+#coin-header {
+  margin-bottom: 32px;
+  padding: 32px 24px;
+}
+
+@media (max-width: 768px) {
+  #coin-header {
+    padding: 24px;
+  }
+}

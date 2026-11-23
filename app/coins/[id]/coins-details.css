@@ -1,0 +1,68 @@
+.coins-details-top-row {
+  align-items: stretch;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.coins-details-top-row > section,
+.coin-sidebar {
+  height: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.coin-intelligence-card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Prevent the chart card from ever growing beyond its container width */
+.price-analysis-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#live-data-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure the chart container itself clips its canvas */
+#candlestick-chart {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.chart {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .coins-details-top-row {
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+
+  #live-data-wrapper {
+    padding-bottom: 32px;
+    width: 100%;
+  }
+
+  .coin-sidebar {
+    height: auto;
+    width: 100%;
+  }
+
+  .coins-details-top-row > section {
+    height: auto;
+    width: 100%;
+  }
+
+  .price-analysis-card {
+    width: 100%;
+  }
+}

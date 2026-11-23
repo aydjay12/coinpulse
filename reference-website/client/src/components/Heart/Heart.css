@@ -1,0 +1,134 @@
+.heart-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 199 !important;
+}
+
+.heart-icon {
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+  width: 20px;
+  height: 20px;
+}
+
+.heart-icon.favorited {
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.3));
+}
+
+.heart-tooltip {
+  display: none;
+  position: absolute;
+  left: -60%;
+  top: 110%;
+  margin-left: 8px;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.heart-splash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ff4757;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle-v2 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ff4757;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.heart-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Tooltip cleanup */
+.heart-tooltip {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 120%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heart-icon-container:hover .heart-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.heart-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .heart-tooltip {
+    left: auto;
+    right: 120%;
+    bottom: 50%;
+    transform: translateY(50%) translateX(10px);
+  }
+
+  .heart-icon-container:hover .heart-tooltip {
+    transform: translateY(50%) translateX(0);
+  }
+
+  .heart-tooltip::after {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent #333;
+  }
+}
